@@ -5,7 +5,12 @@
 
 REMARKABLE_ENDPOINT='http://10.11.99.1'
 if wget --quiet --spider "${REMARKABLE_ENDPOINT}"; then
-    FILEPATH="${PWD}/$1"
+    if [ "${1:0:1}" = "/" ]; then
+        FILEPATH="$1"
+    else
+        FILEPATH="${PWD}/$1"
+    fi
+
     curl --form "file=@${FILEPATH}" "${REMARKABLE_ENDPOINT}/upload"
 else
     echo "Enable USB web interface from reMarkable 2 tablet."
