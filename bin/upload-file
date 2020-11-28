@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Mechanism discovered by analysing network traffic
+# with the help of Firefox Developer Tools
+
+REMARKABLE_ENDPOINT='http://10.11.99.1'
+if wget --quiet --spider "${REMARKABLE_ENDPOINT}"; then
+    FILEPATH="${PWD}/$1"
+    curl --form "file=@${FILEPATH}" "${REMARKABLE_ENDPOINT}/upload"
+else
+    echo "Enable USB web interface from reMarkable 2 tablet."
+fi
