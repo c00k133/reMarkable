@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh root@10.11.99.1 'tar cf - /' | gzip >remarkable_backup-$(date '+%Y-%m-%d').tar.gz
