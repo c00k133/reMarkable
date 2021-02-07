@@ -11,7 +11,7 @@ if wget --quiet --spider "${REMARKABLE_ENDPOINT}"; then
         FILEPATH="${PWD}/$1"
     fi
 
-    curl --form "file=@${FILEPATH}" "${REMARKABLE_ENDPOINT}/upload"
+    curl --progress-bar --form "file=@${FILEPATH}" "${REMARKABLE_ENDPOINT}/upload"
 else
     echo "Enable USB web interface from reMarkable 2 tablet."
 fi
