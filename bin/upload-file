@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Mechanism discovered by analysing network traffic
 # with the help of Firefox Developer Tools
